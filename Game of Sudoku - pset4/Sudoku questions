@@ -1,0 +1,28 @@
+1) Notice that main calls strcmp. What does it mean if strcmp, when passed 2 strings, return 0?
+The two strings made up of the same characters. 
+
+2) How would you rewrite the line below, excerpted from main, using keywords if and else? int max = (strcmp(g.level, "debug") ==0) ? 9 :1024;
+
+int max;
+If((strcmp(g.level, "debug") ==0))
+    max = 9;
+Else
+    max = 1024;
+
+3) Under what circumstances might the call to sscanf below, excerpted from main, return 2 instead of 1? Scanf(argv[2], " %d %c", &g.number, &c)
+
+If a character is added after the first integer. 
+
+
+4) What fields in g represent the coordinates at which the user's cursor belongs?
+The Y,X variables represent the y,x coordinates of your cursor. 
+
+5) what function (that we wrote) can you call to make the cursor actually appear at those coordinate?
+show_cursor(void), makes the cursor appear at g.y/g.x
+
+6) Around what line number in main cound you add additional case statements to handle keystrokes besides N, R, and ctrl-L?
+You can start adding additional case statements 
+At the end of the last case statement, case CTRL('l'):, around line 188. Before the closing braket }
+
+7)Most n00b and l33t boards have lots of blanks. But how many blanks are in debug #1? In debug #2? And in debug #9?
+1, 2, 9 Respectively

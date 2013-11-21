@@ -1,0 +1,85 @@
+0) How many different colors does each format support?
+GIF - 256 colors can be used from a pool of 16million
+JPEG - uses 24bit color encoding so it can use 16 million colors
+PNG- 16 million colors
+BMP- has a maximum bbp (bits per pixel) of 32 bits, meaning it can display about 4 billion colors
+
+1) Which of these formats supports animation?
+GIF - Supports animation
+PNG - Does not support animation
+TIFF - Supports animation
+Jpeg - Does not support animation
+BMP - does not support animation
+
+2) What's the diffference between lossy and lossless compression?
+Lossy compression disgards some of the images original information for the sake of creating a smaller file.
+Lossless preserves all the images original information and looks for other ways to compress the images size, without sacraficing pixel info. 
+
+3) Which of thse formats are lossy-compressed?
+Tiff - can be loss or loselessly compressed
+PNG- a losless compression format that looks for patterns to create compressions that can be reversed exactly
+GIF - Only lossesless is 256 or less are used
+JPEG- can be lossy or losslessly encoded
+BMPs are generally not compressed and lossless
+
+4) What happens when a file is deleted on a FAT file system?
+First, the OS changes the files first character to indicate that the file is to be considered "deleted." Second, the OS, declares that the remaining clusters are available to be written on. The actual file is never touched during deletion. 
+
+5)What can someone do to ensure, with high probability, that the files you delete cannot be recovered?
+Incineration? Alternatively, the entire harddrive can be overwritten with 1's or 0's. 
+
+6) What's stdint.h?
+Stdint.h is a header file that loads functionality relating  to data type size. It defines types, such as uint8_t, uint32_t, int32_t, and uint16_t, listed below. It comes in handy when you want to work with specific data sizes across any platform. 
+
+
+7) What's the point of using uint8_t, uint32_t, int32_t, and uint16_t in a program?
+u prefix - unsigned integer, capable of representing only positive  values
+signed intefer - represents positive or negative values
+
+uint8_t - represents 8 bits or 1 byte of memory
+uint32_t - represents 32 bit memory type (unsigned/positve)
+int32_t - signed 32 bit type capable of representing −2,147,483,648 to 2,147,483,647. (like a long)
+uint16_t - 16 bit memory type capable of representing 0 to 65,535. (like a word)
+
+
+8) How many bytes is a BYTE, DWORD, LONG, and WORD?
+
+BYTE - 8 bits, 1 byte
+WORD - A word is a defined width of data the system procesor accepts. By convention WORD is considered 16 bits, or 2 bytes.
+DWORD - In a 32 bit computer, the size of a DWORD would be 4 bytes. 
+LONG - A long is 32 bits, or 4 bytes
+
+9) What must the first 2 bytes of any BMP file be?
+The first 2 bites of a BMP file contain the header. The header identifies that the file is in fact a BMP. 
+
+
+10) What's the difference between bfSize and biSize?
+biSize - specifies the number of bits the BMP header/pixel/padding contains. 
+bfSize - the size of the pixel/padding info.
+
+
+11) What does it mean if biHeight is negative?
+Normally bit maps are read starting from the bottom left hand corner and work their way up. If the biHeight is negative, the image will start from the top left and continue down. 
+
+12) What field in BITMAPINFOHEADER specifies the BMP's color depth? (bits per pixel)
+The color depth information can be found at a 2 byte section of memory, offset 1Ch from 0 in the header. 
+
+13) Why might fopen return NULL in copy.c:31?
+Fopen may return NULL if the file does not exist or fails to open for whatever reason. 
+
+14) Why is the third arguement to Fread always 1 in our code?
+fread is always 1 in the code because we are writting 1 character at a time. 
+
+15) What value does copy.c:72 assign padding if bi.biWidth 3?
+Three
+
+16) What does fseek do?
+fseek positions the read/write point in a particular point in the file stream
+
+17) What is SEEK_CUR?
+SEEK_CUR tells fseek to position itself relative to the pointers current position. 
+
+18) Who dun it?
+Rob Bowden gone dun it. 
+
+

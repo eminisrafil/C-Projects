@@ -1,0 +1,33 @@
+What is pneumonoultramicroscopicsilicovolcanoconiosis?
+A medical condition caused by the inhalation of fine silica dust. Also, the longest word in the English language with 45 characters. 
+
+
+1. According to its man page, what  does getrusage do?
+Getrusage() returns the pointer to a struct containing the usage statistics of the program. Information like CPU time, memory usage, blocks in/out and more can be found here. 
+
+
+2. Per that same man page, how many members are in a variable of type struct rusage?
+Rusage contains 16 data types. 
+
+3. Why  do  you think we pass before and after by reference (instead of by value) to calculate, even though we’re not changing their contents?
+The getrusage function prototype expects a pointer. Using pointers, rather than passing by value, is also quicker and more efficient. 
+
+4. Explain as precisely as possible, in a paragraph or more, how main goes about reading words from a file. In other words, convince us that you indeed understand how that function’s for loop works.
+
+After opening and checking that the file has opened, the for loop iterates until the EOF, or end or file, marker is reached. C is initialized with the first character from the file, pointed to by fp. Each iteration of the for loop causes C to be assigned the value of the next character in the file. 
+
+Each character, contained in variable C, is checked to ensure it is a letter or an apostrophe, as long as the apostrophe does not appear at the beginning of the word. If it is a letter, the character will be inserted into the WORD array at the INDEX position. After this happens INDEX is incremented to go to the next position in the array. 
+
+If the size of INDEX exceeds the maximum permitted size of a word, as defined by LENGTH, the program will cycle to the end of the word and start looking for the next word, by resetting index to 0. The same thing is done if a number is found, within a word or on its own. 
+
+If the array contains no numbers, starting apostrophes, and is below the maximum length of a word, it must be a word so it is given a null terminator. While being timed, the word is checked for misspellings. If it is not found in the dictionary, the word is printed out and the total number of misspellings caught is increased by 1.    
+
+
+
+5. Why do you think we used fgetc to read each word’s characters one at a time rather than use fscanf with a format string like"%s" to read whole words at a time?Put another way,what problems might arise by relying on fscanf alone?
+fgetc is a more effective tool for examining 1 character at a time, to check that it is a valid letter. Fscanf, by default, ignores whitespace, which we can use with fgetc to identify the end of a word. 
+
+6. Why do you think we declared the parameters for check and load as const?
+These are pointers to a constant character. These pointers cannot change the values that they are pointing to. This is useful for functions like load and check whose job is not to change the elements in the WORD array, but only to read them. Other pointers, however, can change the value of the chars stored in the WORD array, allowing MAIN to pass a new string to the CHECK function, while taking extra steps to ensure that CHECK does not modify it.
+
+
